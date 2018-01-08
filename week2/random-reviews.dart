@@ -1,7 +1,7 @@
 import "dart:math" show Random;
 
 class RandomIndex {
-  RandomIndex(this.n) {}
+  RandomIndex(this.n);
   Random rand = new Random();
   int n;
   int get index => rand.nextInt(n);
@@ -59,8 +59,8 @@ VALUES""");
   for (int i = 1; i <= reviews; i++) {
     String name = input["name"][ri.index], comment = randomComment();
     int video = ri.index + 1, score = ri.index + 1;
-    print("($i, $video, '$name', $score, '$comment')${i == reviews ? ";": ","}"
-        "");
+    print(
+        "($i, $video, '$name', $score, '$comment')${i == reviews ? ";": ","}");
   }
   print("-- End of script's output. -------------------------\n");
 }
