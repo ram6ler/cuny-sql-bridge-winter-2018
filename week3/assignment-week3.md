@@ -13,9 +13,17 @@
 > * All rooms, and the groups assigned to each room. The rooms should appear even if no groups have been assigned to them.
 > * A list of users, the groups that they belong to, and the rooms to which they are assigned. This should be sorted alphabetically by user, then by group, then by room.
 
-## Definitions
 
-For this assignment I decided to define the main data in three tables, namely *Users*, *Groups* and *Rooms*. I created and populated them as follows:
+## Design
+
+For this assignment I decided to define the main data in three tables, *Users*, *Groups* and *Rooms*, and to then establish the relations via a further two tables, *GroupAssign* and *AccessPermission*, as illustrated below.
+
+![](relations.png)
+
+
+## Main data
+
+I created and populated the main data as follows:
 
 ### *Users*
 
@@ -96,9 +104,9 @@ VALUES
 |3|Auditorium A|
 |4|Auditorium B|
 
-## Relationships
+## Relations
 
-I then established the relationships between the data via two tables that I called *GroupAssignments* and *AccessPermission*.
+I then defined and populated the relation-establishing tables as follows:
 
 ### *GroupAssignment*
 
@@ -156,9 +164,10 @@ VALUES
 
 (Notice that *AccessPermission* represents a *many-to-many* relationship between *Groups* and *Rooms*. For example, notice that *I.T.* is mapped to *101* and *102*, and that both *I.T.* and *Sales* are mapped to *102*.)
 
+
 ## Assignment queries
 
-Now that the data is set up, we can extract the requested information.
+Now that the data is set up, we can extract the requested information as follows.
 
 ### Query 1
 
